@@ -359,8 +359,8 @@
                     "state": "enabled"
                 },
                 "pageContext": {
-                    "state": "internal",
-                    "minSupportedVersion": "1.157.0"
+                    "state": "enabled",
+                    "minSupportedVersion": "1.177.0"
                 },
                 "applicationMenuShortcut": {
                     "state": "enabled"
@@ -426,12 +426,8 @@
             "exceptions": [],
             "state": "enabled",
             "settings": {
-                "chatsLocalStorageKeys": ["savedAIChats"]
-            },
-            "features": {
-                "nativeUI": {
-                    "state": "internal"
-                }
+                "chatsLocalStorageKeys": ["savedAIChats"],
+                "maxHistoryCount": 5
             }
         },
         "autocompleteTabs": {
@@ -458,6 +454,9 @@
                             },
                             {
                                 "percent": 50
+                            },
+                            {
+                                "percent": 100
                             }
                         ]
                     }
@@ -1216,7 +1215,7 @@
             "minSupportedVersion": "0.22.3"
         },
         "performanceMetrics": {
-            "state": "enabled"
+            "state": "disabled"
         },
         "breakageReporting": {
             "state": "enabled"
@@ -1431,6 +1430,10 @@
                     {
                         "domain": "arcteryx.com",
                         "reason": "https://github.com/duckduckgo/privacy-configuration/pull/3701"
+                    },
+                    {
+                        "domain": "sling.com",
+                        "reason": "https://github.com/duckduckgo/privacy-configuration/pull/4465"
                     }
                 ],
                 "webViewDefault": [
@@ -2029,7 +2032,7 @@
                 },
                 "webNotifications": {
                     "state": "enabled",
-                    "minSupportedVersion": "1.175.0"
+                    "minSupportedVersion": "1.176.0"
                 }
             }
         },
@@ -2132,53 +2135,7 @@
         },
         "webInterferenceDetection": {
             "state": "enabled",
-            "minSupportedVersion": "1.172.0",
-            "exceptions": [],
-            "settings": {
-                "autoRunDelayMs": 100,
-                "interferenceTypes": {
-                    "botDetection": {
-                        "cloudflareTurnstile": {
-                            "state": "enabled",
-                            "vendor": "cloudflare",
-                            "selectors": [
-                                ".cf-turnstile",
-                                "script[src*=\"challenges.cloudflare.com\"]"
-                            ],
-                            "windowProperties": ["turnstile"],
-                            "statusSelectors": [
-                                { "status": "solved", "selectors": ["[data-state=\"success\"]"] },
-                                { "status": "failed", "selectors": ["[data-state=\"error\"]"] }
-                            ]
-                        },
-                        "hcaptcha": {
-                            "state": "enabled",
-                            "vendor": "hcaptcha",
-                            "selectors": [
-                                ".h-captcha",
-                                "[data-hcaptcha-widget-id]",
-                                "script[src*=\"hcaptcha.com\"]"
-                            ],
-                            "windowProperties": ["hcaptcha"]
-                        }
-                    },
-                    "fraudDetection": {
-                        "phishingWarning": {
-                            "state": "enabled",
-                            "type": "phishing",
-                            "selectors": [
-                                ".warning-banner",
-                                "#security-alert"
-                            ],
-                            "textPatterns": [
-                                "suspicious.*activity",
-                                "unusual.*login"
-                            ],
-                            "textSources": ["innerText"]
-                        }
-                    }
-                }
-            }
+            "minSupportedVersion": "1.172.0"
         },
         "updates": {
             "state": "enabled",

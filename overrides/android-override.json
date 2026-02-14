@@ -494,9 +494,18 @@
                             },
                             {
                                 "percent": 50
+                            },
+                            {
+                                "percent": 100
                             }
                         ]
                     }
+                },
+                "contextualMode": {
+                    "state": "internal"
+                },
+                "automaticContextAttachment": {
+                    "state": "internal"
                 }
             }
         },
@@ -1252,6 +1261,9 @@
                 },
                 "useHarmony": {
                     "state": "disabled"
+                },
+                "sendSanitizedStackTraces": {
+                    "state": "enabled"
                 }
             }
         },
@@ -1541,6 +1553,10 @@
                 "newCustomTab": {
                     "state": "enabled",
                     "minSupportedVersion": 52590000
+                },
+                "experimentalBrowsingMenu": {
+                    "state": "enabled",
+                    "minSupportedVersion": 52660000
                 }
             }
         },
@@ -3152,12 +3168,6 @@
                     "state": "enabled",
                     "minSupportedVersion": 52451000
                 },
-                "subscriptionRebranding": {
-                    "state": "enabled"
-                },
-                "subscriptionAIFeaturesRebranding": {
-                    "state": "enabled"
-                },
                 "blackFridayOffer2025": {
                     "state": "disabled",
                     "targets": [
@@ -3761,7 +3771,12 @@
         },
         "databaseProvider": {
             "state": "enabled",
-            "exceptions": []
+            "exceptions": [],
+            "features": {
+                "sendSanitizedStackTraces": {
+                    "state": "enabled"
+                }
+            }
         },
         "serp": {
             "state": "enabled",
@@ -3780,6 +3795,9 @@
                             },
                             {
                                 "percent": 50
+                            },
+                            {
+                                "percent": 100
                             }
                         ]
                     }
@@ -3792,7 +3810,7 @@
             "exceptions": [],
             "settings": {
                 "additionalCheck": "enabled",
-                "activeCaptureOnFirstMessage": "disabled",
+                "activeCaptureOnFirstMessage": "enabled",
                 "maxContentLength": 9500,
                 "mainContentSelector": "main, article, .content, .main, #content, #main",
                 "excludeSelectors": [
